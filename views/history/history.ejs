@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <link rel="stylesheet" href="history.css">
+</head>
+<body>
+    
+
+   
+    <nav>
+        <img src="logoTest.png" alt="Logo">
+        <button class="primary" onclick="location.href='/main'">الرئيسية</button>
+    </nav>
+
+
+
+    <main>
+
+        <div class="list">
+            <% if(object.length < 1){ %>
+                <h1>لا يوجد لديك اي رابط</h1>
+            <% } else{ %>
+                <h1>الروابط</h1>
+            <% } %>
+                <section>            
+           <% object.reverse().forEach(function(item) { %>
+            
+                      
+                    <div class="card">
+                        <% const dateObj = new Date(item.CREATED_AT); %>
+                        <div class="left" id="<%=item.LINK%>">
+                            <h3><%= `${dateObj.getFullYear()}/${dateObj.getMonth() + 1}/${dateObj.getDate()} at ${dateObj.getHours()}h:${dateObj.getMinutes()}m` %></h3>
+                        </div>
+
+                        <div class="right" onclick="location.href = `<%=item.LINK%>`">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.3333 10C22.9357 10 26.6667 13.731 26.6667 18.3333M27.7647 27.7582L35 35M31.6667 18.3333C31.6667 25.6972 25.6972 31.6667 18.3333 31.6667C10.9695 31.6667 5 25.6972 5 18.3333C5 10.9695 10.9695 5 18.3333 5C25.6972 5 31.6667 10.9695 31.6667 18.3333Z" stroke="#F5F5F5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>                                
+                        </div>
+
+                    </div>
+          <% }); %>
+
+
+                </section>
+        </div>
+
+
+    </main>
+
+
+
+
+
+
+</body>
+</html>
+
+
+<script>
+    document.querySelectorAll(".left").forEach(e => {
+        e.addEventListener('click',(left) => {
+            navigator.clipboard.writeText(`http://${location.host}/show/${left.target.id}`);
+            alert("Copied")
+        })
+    })
+</script>

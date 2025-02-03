@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <link rel="stylesheet" href="\views\details\details.css">
+</head>
+<body>
+
+
+    
+
+
+    <nav>
+        <img src="logoTest.png" alt="Logo">
+        <button class="primary" onclick="location.href='/history'">الروابط</button>
+    </nav>
+
+
+
+    <main>
+        
+        <div class="list">
+
+            <% if(object.length < 1){ %>
+                <h1>لا يوجد بيانات بعد</h1>
+            <% } else{ %>
+                <h1>البيانات</h1>
+            <% } %>
+
+                
+                <section>   
+
+                <% object.reverse().forEach(function(item) { %>
+                    
+                    <% if(item.startsWith('data')){ %>
+
+                        <div class="image">
+                            <img src="<%=item%>" alt="">
+                        </div>
+
+                    <%}else{%>
+                        <div class="info">
+                            <%=item%>
+                        </div>
+                    <%}%>
+                    
+  
+                <% }); %>
+
+                </section>
+
+        </div>
+
+
+    </main>
+
+
+
+
+</body>
+</html>

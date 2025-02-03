@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Cairo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+}
+
+html,body{
+    width:100%;
+    height: 100%;
+    background: #393E46;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: bg 1s infinite alternate;
+}
+
+main{
+    width:30%;
+    height:30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+h4{
+    color:white;
+}
+h6{
+    color:rgba(245, 245, 245, 0.753);
+}
+hr{
+    width:1rem;
+}
+
+
+
+.traffic-loader {
+    width: 50px;
+    height: 50px;
+    --c: radial-gradient(farthest-side, #fff 92%, #0000);
+    background: var(--c) 50% 0, var(--c) 50% 100%, var(--c) 100% 50%,
+      var(--c) 0 50%;
+    background-size: 10px 10px;
+    background-repeat: no-repeat;
+    animation: s8 1s infinite;
+    position: relative;
+  }
+  
+  .traffic-loader::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: 3px;
+    background: repeating-conic-gradient(#0000 0 35deg, #fff 0 90deg);
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 3px), #000 0);
+    border-radius: 50%;
+  }
+  
+  @keyframes s8 {
+    100% {
+      transform: rotate(0.5turn);
+    }
+  }
+
+  @keyframes bg {
+    0% {
+        background: #393E46;
+    }
+    100%{
+        background: #26282c;
+    }
+  }
+  
+
+

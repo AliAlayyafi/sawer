@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show</title>
+    <link rel="stylesheet" href="/views/show/show.css">
+</head>
+<body>
+    
+
+    <form action="/show/<%=link%>" method="POST">
+        <input class="data" type="text" name="data" style="display: none;" value="">
+    </form>
+
+    <main>
+        <div class="traffic-loader"></div>
+        <h4>جاري تحميل الصفحة</h4>
+        <hr>
+        <h6>قد يستغرق بضعة ثواني</h6>
+    </main>
+
+
+
+
+<script src="show.js"></script>
+</body>
+</html>
