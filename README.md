@@ -15,8 +15,8 @@ Sawer System The Sawer System is a fun and innovative tool that allows you to cr
 
 
 ### To run the code you have to setup the database and run the server.js file.
---- sawer_database.sql
---- server.js
+##### sawer_database.sql
+##### server.js
 
 ```bash
 npm run dev
